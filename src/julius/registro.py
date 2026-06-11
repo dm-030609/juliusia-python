@@ -30,3 +30,16 @@ class RegistroFinanceiro:
 
     def __len__(self):
         return len(self._gastos)
+
+
+    def resumo(self) -> str:
+        if not self._gastos:
+            return "Nenhum gasto encontrado"
+
+        linhas = [str(gasto) for gasto in self._gastos]
+        linhas.append(f"Total: R${self.total():.2f}")
+
+        return "\n".join(linhas)
+
+    def __str__(self) -> str:
+        return f"total= {self.total():.2f}, gastos(qtd)= {len(self)}"
