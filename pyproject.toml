@@ -1,0 +1,13 @@
+[project]
+name = "juliusia-python"
+version = "0.1.0"
+description = "Agente financeiro pessoal com IA — versão Python"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
