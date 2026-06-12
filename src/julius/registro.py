@@ -4,6 +4,9 @@ class RegistroFinanceiro:
     def __init__(self):
         self._gastos = []
 
+    def todos(self) -> list:
+        return self._gastos 
+
 
     def adicionar(self, gasto):
         self._gastos.append(gasto)
