@@ -16,19 +16,24 @@ class RegistroFinanceiro:
 
     def filtrar_por_categoria(self, categoria: str) -> list:
         resultado = []
-        for gasto in self._gastos:
-            if gasto.categoria == categoria:
-                resultado.append(gasto)
+        # for gasto in self._gastos:
+        #     if gasto.categoria == categoria:
+        #         resultado.append(gasto)
+        #
+        # return resultado
 
-        return resultado
+        #comprehensions - modo pythonico de escrita
+        return [g for g in self._gastos if g.categoria == categoria ]
 
 
     def filtrar_por_data(self, data: str) -> list:
         resultado = []
-        for gasto in self._gastos:
-            if gasto.data == data:
-                resultado.append(gasto)
-        return resultado
+        # for gasto in self._gastos:
+        #     if gasto.data == data:
+        #         resultado.append(gasto)
+        # return resultado
+
+        return [g for g in self._gastos if g.data == data]
 
 
     def __len__(self):
