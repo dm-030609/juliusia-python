@@ -1,0 +1,10 @@
+# Blueprint do Render: descreve a infra como código.
+# No painel do Render: New > Blueprint > conecta o repo > ele lê este arquivo.
+services:
+  - type: web              # serviço que recebe tráfego HTTP (tem URL pública)
+    name: juliusia-python  # nome do serviço no painel
+    runtime: docker        # usa o Dockerfile do repo (não o buildpack do Render)
+    plan: free             # plano gratuito (dorme após inatividade — ver nota abaixo)
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /docs  # Render bate aqui; 200 = "subiu". /docs é o Swagger.
+    autoDeploy: true        # cada push na branch padrão (main) redeploya sozinho

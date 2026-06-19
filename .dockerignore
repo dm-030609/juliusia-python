@@ -1,0 +1,12 @@
+# Tudo listado aqui NÃO é copiado pra dentro da imagem (o "COPY . ." pula estes).
+# Deixa a imagem menor, o build mais rápido e evita levar lixo/segredo local.
+# OBS: no .dockerignore o "#" só vale no início da linha — nada de comentário ao lado.
+
+.venv
+.git
+.idea
+__pycache__
+*.pyc
+.python-version
+.pytest_cache
+.ruff_cache
