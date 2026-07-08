@@ -30,10 +30,7 @@ class RelatorioFinanceiro:
         return total
 
     def resumo_mensal(self, mes: str) -> str:
-        gasto_do_mes = []
-        for gasto in self._registro.todos():
-            if gasto.data[3:] == mes:
-                gasto_do_mes.append(gasto)
+        gasto_do_mes = [gasto for gasto in self._registro.todos() if gasto.data[3:] == mes]
 
         if not gasto_do_mes:
             return f"Nenhum gasto em {mes}"
